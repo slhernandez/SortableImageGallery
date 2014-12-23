@@ -43,18 +43,21 @@ gulp.task('clean', function(cb) {
 gulp.task('watch', function() {
 
   // Watch scss files
-  gulp.watch(paths.sass, ['styles']);
+  gulp.watch(paths.sass, ['css']);
 
   // Watch .js files
   gulp.watch(paths.scripts, ['scripts']);
+
+  // Watch any HTML changes for site
+  gulp.watch(paths.html, ['site']);
 
   // Create LiveReload server
   livereload.listen();
 
   // Watch any files in build/, reload on change
-  gulp.watch([paths.build]).on('change', livereload.changed);
+  gulp.watch(paths.build).on('change', livereload.changed);
 
 });
 
 gulp.task('build', ['site', 'css', 'scripts']);
-gulp.task('default', ['build', 'watch']);
+gulp.task('default', ['clean', 'build', 'watch']);
