@@ -1,5 +1,5 @@
 {
-  "name": "AppleExercise",
+  "name": "SortableImageGallery",
   "version": "0.0.1",
   "description": "Basic photo ordering tool based on the images and JavaScript included. Thumbnails of images are displayed in a grid layout and sortable by dragging images to their desired position. ",
   "devDependencies": {
