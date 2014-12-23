@@ -1,9 +1,7 @@
 {
   "name": "AppleExercise",
   "version": "0.0.1",
-  "description": "Developer Exercise for Apple.",
-  "author": "Steve L. Hernandez",
-  "homepage": "https://github.com/slhernandez/AppleExercise",
+  "description": "Basic photo ordering tool based on the images and JavaScript included. Thumbnails of images are displayed in a grid layout and sortable by dragging images to their desired position. ",
   "devDependencies": {
     "del": "^1.1.0",
     "gulp": "^3.8.10",
@@ -15,5 +13,13 @@
     "gulp-notify": "^2.1.0",
     "gulp-ruby-sass": "^0.7.1",
     "gulp-uglify": "^1.0.2"
-  }
+  },
+  "scripts": {
+    "start": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:slhernandez/SortableImageGallery.git"
+  },
+  "author": "Steve L. Hernandez"
 }
