@@ -1,15 +1,14 @@
 var gulp          = require('gulp'),
-    sass          = require('gulp-ruby-sass'),
+    sass          = require('gulp-sass'),
     autoprefixer  = require('gulp-autoprefixer'),
     jshint        = require('gulp-jshint'),
-    rename        = require('gulp-rename'),
     concat        = require('gulp-concat'),
     notify        = require('gulp-notify'),
     livereload    = require('gulp-livereload'),
     del           = require('del');
 
 var paths = {
-  build: 'build',
+  build: 'build/',
   scripts: ['src/site/scripts/**/*.js'],
   html: ['src/**/*.html'],
   site: ['src/site/**/*'],
@@ -18,17 +17,17 @@ var paths = {
 
 gulp.task('css', function() {
   return gulp.src(paths.sass)
-    .pipe(sass({ style: 'expanded' }))
-    .pipe(autoprefixer('last 2 version'))
+    .pipe(sass())
+    .pipe(autoprefixer('last 15 version'))
     .pipe(gulp.dest(paths.build + 'css'))
     .pipe(notify({ message: 'css task complete' }));
 });
 
 gulp.task('scripts', function() {
   return gulp.src(paths.scripts)
-    .pipe(jshint('.jshint'))
-    .pipe(jshint.reporter('.default'))
-    .pipe(gulp.dest('.build/scripts'))
+    //.pipe(jshint('.jshintrc'))
+    .pipe(jshint.reporter('default'))
+    .pipe(gulp.dest('build/scripts'))
     .pipe(notify({ message: 'Scripts task complete' }));
 });
 
