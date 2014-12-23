@@ -38,7 +38,7 @@ gulp.task('site', function() {
 });
 
 gulp.task('clean', function(cb) {
-  del(paths.build, cb)
+  del([paths.build], cb)
 });
 
 gulp.task('watch', function() {
@@ -48,6 +48,12 @@ gulp.task('watch', function() {
 
   // Watch .js files
   gulp.watch(paths.scripts, ['scripts']);
+
+  // Create LiveReload server
+  livereload.listen();
+
+  // Watch any files in build/, reload on change
+  gulp.watch([paths.build]).on('change', livereload.changed);
 
 });
 
