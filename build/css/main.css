@@ -60,9 +60,31 @@ small {
   zoom: 1; }
 
 /* IE < 8 */
+h1, h2, h3, h4 {
+  color: #333; }
+
+p {
+  color: #454545;
+  font-size: 0.875em; }
+
+h1 {
+  font-size: 1.75em; }
+
+h2 {
+  font-size: 1.5em; }
+
+h3 {
+  font-size: 1.25em; }
+
+h4 {
+  font-size: 1.125em; }
+
+h5 {
+  font-size: 1em; }
+
 .grid {
   background: white;
-  margin: 0 0 1.25em 0; }
+  margin: 0 0 1.25em 1.25em; }
   .grid:after {
     /* Or @extend clearfix */
     content: "";
@@ -120,3 +142,12 @@ body {
 
 a {
   text-decoration: none; }
+
+header {
+  padding: 20px; }
+  header h1 {
+    font-weight: 200;
+    text-align: center; }
+
+img {
+  width: 100%; }

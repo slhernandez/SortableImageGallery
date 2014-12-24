@@ -1,4 +1,5 @@
 var gulp          = require('gulp'),
+    browserify    = require('gulp-browserify'),
     sass          = require('gulp-sass'),
     autoprefixer  = require('gulp-autoprefixer'),
     jshint        = require('gulp-jshint'),
@@ -26,8 +27,12 @@ gulp.task('css', function() {
 gulp.task('scripts', function() {
   return gulp.src(paths.scripts)
     //.pipe(jshint('.jshintrc'))
+    .pipe(browserify({
+      insertGlobals: true,
+      debug: true
+    }))
     .pipe(jshint.reporter('default'))
-    .pipe(gulp.dest('build/scripts'))
+    .pipe(gulp.dest('./build/scripts'))
     .pipe(notify({ message: 'Scripts task complete' }));
 });
 

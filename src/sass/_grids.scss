@@ -2,7 +2,7 @@ $pad: 1.25em;
 
 .grid {
   background: white;
-  margin: 0 0 $pad 0;
+  margin: 0 0 $pad $pad;
 
   &:after {
     /* Or @extend clearfix */

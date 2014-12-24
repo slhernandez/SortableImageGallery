@@ -4,8 +4,10 @@
   "description": "Basic photo ordering tool based on the images and JavaScript included. Thumbnails of images are displayed in a grid layout and sortable by dragging images to their desired position. ",
   "devDependencies": {
     "del": "^1.1.0",
+    "draggabilly": "^1.1.1",
     "gulp": "^3.8.10",
     "gulp-autoprefixer": "^2.0.0",
+    "gulp-browserify": "^0.5.0",
     "gulp-concat": "^2.4.2",
     "gulp-jshint": "^1.9.0",
     "gulp-livereload": "^3.0.2",
