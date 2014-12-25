@@ -136,21 +136,24 @@ h5 {
   box-sizing: border-box; }
 
 body {
+  background: #F1F2F3;
+  color: #454545;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
-  color: #454545; }
+  -webkit-font-smoothing: antialiased; }
 
 a {
   text-decoration: none; }
 
 header {
-  margin: 0 auto;
-  width: 980px;
-  padding: 20px;
-  border-bottom: 1px solid #CCC; }
+  background: #444;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 16px; }
   header h1 {
     font-weight: 200;
-    text-align: center; }
+    text-align: center;
+    color: #FFF;
+    font-size: 1.25em; }
 
 img {
   width: 100%; }
@@ -169,10 +172,10 @@ ul {
   bottom: 0;
   margin: auto;
   width: 980px;
-  height: 800px; }
+  height: 730px; }
 
 .container {
-  margin: 0 auto;
+  margin: 100px auto 0 auto;
   width: 980px; }
   .container:before, .container:after {
     content: "\0020";
@@ -194,6 +197,9 @@ ul {
   position: relative;
   z-index: 5; }
 
+.cloned ul {
+  margin: 0; }
+
 .cloned:before, .cloned:after {
   content: "\0020";
   display: block;
@@ -204,3 +210,33 @@ ul {
 .cloned li {
   position: absolute;
   z-index: 1; }
+  .cloned li img {
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); }
+
+.gallery {
+  background: #FFF;
+  padding: 3px;
+  border: 1px solid #CCC; }
+  .gallery img {
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); }
+
+.gallery li:hover span, .cloned li:hover span {
+  height: 40px; }
+  .gallery li:hover span p, .cloned li:hover span p {
+    color: #FFF; }
+
+.caption {
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  height: 0px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  -webkit-transition: height 300ms;
+          transition: height 300ms; }
+  .caption p {
+    color: #FFF;
+    padding-top: 12px; }

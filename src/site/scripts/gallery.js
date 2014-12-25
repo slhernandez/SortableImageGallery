@@ -12,9 +12,18 @@ var gallery = {
                       "dsc_6417.jpg" ];
     console.log('imageFilenames ...', imageFilenames);
 
-    var gallery = $('.gallery li');
-    this.clone(gallery);
+    // Let's build an image gallery based on the list of images provided by 
+    // the iamgeFilenames array.
+    /*var images = '';
+    $.each(imageFilenames, function(item, val) {
+      images += '<li><img src="images/' + val + '"></li>'
+    });
+    $('.gallery').append(images);*/
 
+    // clone the gallery for cool draggable element effect.
+    this.clone($('.gallery li'));
+
+    // We want draggable elements that push others out of the way!
     $('.gallery').sortable({
       start: function(e, ui) {
         ui.helper.addClass('exclude-me');
@@ -53,7 +62,6 @@ var gallery = {
   clone: function(gallery) {
     gallery.each(function() {
       var img = $(this);
-      console.log('img attributes:', img.attr('style'));
       // sanitize img item before cloning.
       if (img.attr('style') !== undefined) {
         img.attr('style', 'visibility: visible;');
@@ -72,7 +80,6 @@ var gallery = {
     });
   },
   resizeHasStopped: function() {
-    console.log('screen no longer resizing');
     $('.cloned').show();
     if ( $('.cloned').is(':empty') ) {
       gallery.clone($('.gallery li'));
@@ -80,11 +87,12 @@ var gallery = {
   }
 }
 
+
 $(document).ready(function() {
   gallery.init();
   var timer;
+  // Detect when screen is resized so we can re-clone the image gallery.
   $(window).on('resize orientationChanged', function() {
-    console.log('screen is changing size');
     $('.cloned').empty();
     timer && clearTimeout(timer);
     timer = setTimeout(gallery.resizeHasStopped, 1000);

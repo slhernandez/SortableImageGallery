@@ -1,5 +1,6 @@
 var gulp          = require('gulp'),
-    browserify    = require('gulp-browserify'),
+    browserify    = require('browserify'),
+    source        = require('vinyl-source-stream'),
     sass          = require('gulp-sass'),
     autoprefixer  = require('gulp-autoprefixer'),
     jshint        = require('gulp-jshint'),
@@ -23,16 +24,19 @@ gulp.task('css', function() {
     .pipe(notify({ message: 'css task complete' }));
 });
 
-gulp.task('scripts', function() {
+/*gulp.task('scripts', function() {
   return gulp.src(paths.scripts)
     //.pipe(jshint('.jshintrc'))
-    .pipe(browserify({
-      insertGlobals: true,
-      debug: true
-    }))
     .pipe(jshint.reporter('default'))
     .pipe(gulp.dest('./build/scripts'))
     .pipe(notify({ message: 'Scripts task complete' }));
+});*/
+
+gulp.task('scripts', function() {
+  return browserify('./src/site/scripts/gallery.js')
+      .bundle()
+      .pipe(source('bundle.js'))
+      .pipe(gulp.dest('./build/scripts'));
 });
 
 gulp.task('site', function() {
