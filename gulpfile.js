@@ -5,7 +5,6 @@ var gulp          = require('gulp'),
     jshint        = require('gulp-jshint'),
     concat        = require('gulp-concat'),
     notify        = require('gulp-notify'),
-    livereload    = require('gulp-livereload'),
     del           = require('del');
 
 var paths = {
@@ -55,12 +54,6 @@ gulp.task('watch', function() {
 
   // Watch any HTML changes for site
   gulp.watch(paths.html, ['site']);
-
-  // Create LiveReload server
-  livereload.listen();
-
-  // Watch any files in build/, reload on change
-  gulp.watch(paths.build).on('change', livereload.changed);
 
 });
 

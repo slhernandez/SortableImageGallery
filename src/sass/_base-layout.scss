@@ -13,7 +13,10 @@ a {
 }
 
 header {
+  margin: 0 auto;
+  width: 980px;
   padding: 20px;
+  border-bottom: 1px solid #CCC;
   h1 {
     font-weight: 200;
     text-align: center;
@@ -23,3 +26,46 @@ header {
 img {
   width: 100%;
 }
+
+ul {
+  margin: 75px;
+  li {
+    margin: 3px 3px 3px 3px;
+    width: 268px;
+  }
+}
+
+.center {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 980px;
+  height: 800px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 980px;
+  @include clear();
+}
+
+.gallery {
+  @include clear();
+  li {
+    float: left;
+    position: relative;
+    z-index: 5;
+  }
+}
+
+.cloned {
+  @include clear();
+  li {
+    position: absolute;
+    z-index: 1;
+  }
+}
+
