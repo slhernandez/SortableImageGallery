@@ -3,9 +3,11 @@ var gulp          = require('gulp'),
     source        = require('vinyl-source-stream'),
     sass          = require('gulp-sass'),
     autoprefixer  = require('gulp-autoprefixer'),
+    minifycss     = require('gulp-minify-css'),
     notify        = require('gulp-notify'),
     uglify        = require('gulp-uglify'),
     streamify     = require('gulp-streamify'),
+    rename        = require('gulp-rename'),
     del           = require('del');
 
 var paths = {
@@ -20,6 +22,9 @@ gulp.task('css', function() {
   return gulp.src(paths.sass)
     .pipe(sass())
     .pipe(autoprefixer('last 15 version'))
+    .pipe(gulp.dest(paths.build + 'css'))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(minifycss())
     .pipe(gulp.dest(paths.build + 'css'))
     .pipe(notify({ message: 'css task complete' }));
 });
