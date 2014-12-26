@@ -11,14 +11,14 @@ This project uses following tools:
 - [vinyl-source-stream](https://www.npmjs.com/package/vinyl-source-stream)
 
 Gulp manages project build and workflows. Here is a list of plug-ins used:
-- [gulp](http://gulpjs.com/)
-- [gulp-autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer)
-- [gulp-minify-css](https://www.npmjs.com/package/gulp-minify-css)
-- [gulp-notify](https://www.npmjs.com/package/gulp-notify)
-- [gulp-rename](https://www.npmjs.com/package/gulp-rename)
-- [gulp-sass](https://www.npmjs.com/package/gulp-sass)
-- [gulp-streamify](https://github.com/nfroidure/gulp-streamify)
-- [gulp-uglify](https://www.npmjs.com/package/gulp-uglify)
+- [gulp](http://gulpjs.com/)(Build system automating tasks)
+- [gulp-autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer)(Prefix CSS with Autoprefixer)
+- [gulp-minify-css](https://www.npmjs.com/package/gulp-minify-css)(Minify with clean-css)
+- [gulp-notify](https://www.npmjs.com/package/gulp-notify)(send message to OS X notifier)
+- [gulp-rename](https://www.npmjs.com/package/gulp-rename)(Rename files easily)
+- [gulp-sass](https://www.npmjs.com/package/gulp-sass)(Gulp plugin for SASS)
+- [gulp-streamify](https://github.com/nfroidure/gulp-streamify)(Wrap old Gulp plugins to support streams)
+- [gulp-uglify](https://www.npmjs.com/package/gulp-uglify)(Minify files with UglifyJS)
 
 If you've never used Node or npm before, you'll need to install Node.
 If you use homebrew, do:
