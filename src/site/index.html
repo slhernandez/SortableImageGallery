@@ -10,19 +10,15 @@
       <h1>Sortable Image Gallery</h1>
     </header>
     <div class="container">
-      <ul class="gallery">
-        <li><span class="caption"><p>dsc_6001.jpg</p></span><img src="images/dsc_6001.jpg"></li>
-        <li><span class="caption"><p>dsc_6081.jpg</p></span><img src="images/dsc_6081.jpg"></li>
-        <li><span class="caption"><p>dsc_6013.jpg</p></span><img src="images/dsc_6013.jpg"></li>
-        <li><span class="caption"><p>dsc_6268.jpg</p></span><img src="images/dsc_6268.jpg"></li>
-        <li><span class="caption"><p>dsc_6397.jpg</p></span><img src="images/dsc_6397.jpg"></li>
-        <li><span class="caption"><p>dsc_6345.jpg</p></span><img src="images/dsc_6345.jpg"></li>
-        <li><span class="caption"><p>dsc_6378.jpg</p></span><img src="images/dsc_6378.jpg"></li>
-        <li><span class="caption"><p>dsc_6413.jpg</p></span><img src="images/dsc_6413.jpg"></li>
-        <li><span class="caption"><p>dsc_6417.jpg</p></span><img src="images/dsc_6417.jpg"></li>
-      </ul>
+      <ul class="gallery"></ul>
       <ul class="cloned"></ul>
     </div>
     <script type="text/javascript" src="scripts/bundle.js"></script>
+    <script id="imageItemTemplate" type="text/html">
+      <li>
+        <span class="caption"><p><%= image %></p></span>
+        <img src="images/<%= image %>">
+      </li>
+    </script>
   </body>
 </html>
