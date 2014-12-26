@@ -36,16 +36,16 @@ Gulp must be installed globally in order to use the command line tools. *You may
 npm install -g gulp
 ```
 
-### Building the project
+# Building the project
 
-#Install npm dependencies:
+###Install npm dependencies:
 This runs through all dependencies listed in `package.json` and downloads them
 to a `node_modules` folder in your project directory.
 ```
 npm install
 ```
 
-#Build project
+###Build project
 This will run gulp.  Gulp will generate the project and store it in the build folder.
 ```
 npm start
