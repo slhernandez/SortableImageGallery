@@ -1,3 +1,5 @@
+var $ = require('jquery');
+require('jquery-ui');
 var gallery = {
   init: function() {
     console.log('gallery.js is loaded and ready...');
@@ -10,15 +12,6 @@ var gallery = {
                       "dsc_6378.jpg",
                       "dsc_6413.jpg",
                       "dsc_6417.jpg" ];
-    console.log('imageFilenames ...', imageFilenames);
-
-    // Let's build an image gallery based on the list of images provided by 
-    // the iamgeFilenames array.
-    /*var images = '';
-    $.each(imageFilenames, function(item, val) {
-      images += '<li><img src="images/' + val + '"></li>'
-    });
-    $('.gallery').append(images);*/
 
     // clone the gallery for cool draggable element effect.
     this.clone($('.gallery li'));
@@ -57,7 +50,6 @@ var gallery = {
       revert: true,
       cursor: "move"
     });  // end of sortable
-
   },
   clone: function(gallery) {
     gallery.each(function() {
@@ -87,11 +79,11 @@ var gallery = {
   }
 }
 
-
 $(document).ready(function() {
   gallery.init();
-  var timer;
+
   // Detect when screen is resized so we can re-clone the image gallery.
+  var timer;
   $(window).on('resize orientationChanged', function() {
     $('.cloned').empty();
     timer && clearTimeout(timer);

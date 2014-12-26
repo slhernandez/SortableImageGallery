@@ -240,3 +240,19 @@ ul {
   .caption p {
     color: #FFF;
     padding-top: 12px; }
+
+.ui-sortable-helper {
+  -webkit-transition: none !important;
+          transition: none !important;
+  -webkit-animation: pulse 0.4s alternate infinite;
+          animation: pulse 0.4s alternate infinite; }
+
+@-webkit-keyframes pulse {
+  100% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); } }
+
+@keyframes pulse {
+  100% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); } }

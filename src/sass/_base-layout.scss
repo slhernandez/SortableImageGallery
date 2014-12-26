@@ -119,3 +119,12 @@ ul {
   }
 }
 
+.ui-sortable-helper {
+  transition: none !important;
+  animation: pulse 0.4s alternate infinite;
+}
+
+@keyframes pulse {
+  100% {transform: scale(1.05);}
+}
+
